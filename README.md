@@ -8,10 +8,9 @@ gian duy nhất**. Trình duyệt của bạn không bao giờ cần biết đ�
 
 Kho mã nguồn: https://github.com/Velclaw/Velclaw
 
-![Bản ghi thực thi lệnh velclaw run --agent claude](./docs/velclaw-terminal.gif)
+![Bản ghi thực thi lệnh velclaw run --agent claude](./velclaw-terminal.gif)
 
-> Đặt file `velclaw-terminal.gif` vào thư mục `docs/` trong repo (hoặc đổi
-> đường dẫn ở trên) để ảnh động hiển thị trên GitHub.
+> Ảnh động demo được đặt ở thư mục gốc của repo để đường dẫn hiển thị trên GitHub khớp với cấu trúc hiện tại.
 
 ---
 
