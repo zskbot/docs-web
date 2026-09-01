@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/curl/curl/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/curl/curl/releases"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/curl/curl/releases.atom"/>
+  <title>Release notes from curl</title>
+  <updated>2026-08-26T13:53:31+07:00</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/569041/rc-8_22_0-3</id>
+    <updated>2026-08-26T13:53:31+07:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/curl/curl/releases/tag/rc-8_22_0-3"/>
+    <title>rc-8_22_0-3</title>
+    <content type="html">&lt;p&gt;8.22.0-rc3&lt;/p&gt;</content>
+    <author>
+      <name>bagder</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/177011?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/569041/rc-8_22_0-2</id>
+    <updated>2026-08-17T21:30:08+07:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/curl/curl/releases/tag/rc-8_22_0-2"/>
+    <title>rc-8_22_0-2</title>
+    <content type="html">&lt;p&gt;8.22.0-rc2&lt;/p&gt;</content>
+    <author>
+      <name>bagder</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/177011?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/569041/rc-8_22_0-1</id>
+    <updated>2026-08-09T04:07:20+07:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/curl/curl/releases/tag/rc-8_22_0-1"/>
+    <title>rc-8_22_0-1</title>
+    <content type="html">&lt;p&gt;8.22.0-rc1&lt;/p&gt;</content>
+    <author>
+      <name>bagder</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/177011?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/569041/curl-8_21_0</id>
+    <updated>2026-06-24T13:03:04+07:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/curl/curl/releases/tag/curl-8_21_0"/>
+    <title>8.21.0</title>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://curl.se/ch/8.21.0.html&quot; rel=&quot;nofollow&quot;&gt;changelog&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://daniel.haxx.se/blog/2026/06/24/curl-8-21-0/&quot; rel=&quot;nofollow&quot;&gt;release blog&lt;/a&gt;&lt;/p&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/177011/612249408-30c245ab-418b-4052-bda3-38283dc9ec6a.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNjEyMjQ5NDA4LTMwYzI0NWFiLTQxOGItNDA1Mi1iZGEzLTM4MjgzZGM5ZWM2YS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kMWNmODJkODk1NzMyOWZhMTIzZWEwMTkyYTk0ODEzNzI3YmYyODk5ODI4YTVjYTJhMzRlNDlkOTk4YzBiYTQ3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.-IHd4ohEgvyPxynJx8uxiuVJtzFTLEVPb-GneBeSMPU&quot;&gt;&lt;img width=&quot;2000&quot; height=&quot;1000&quot; alt=&quot;curl-8- 21 0&quot; src=&quot;https://private-user-images.githubusercontent.com/177011/612249408-30c245ab-418b-4052-bda3-38283dc9ec6a.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNjEyMjQ5NDA4LTMwYzI0NWFiLTQxOGItNDA1Mi1iZGEzLTM4MjgzZGM5ZWM2YS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1kMWNmODJkODk1NzMyOWZhMTIzZWEwMTkyYTk0ODEzNzI3YmYyODk5ODI4YTVjYTJhMzRlNDlkOTk4YzBiYTQ3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.-IHd4ohEgvyPxynJx8uxiuVJtzFTLEVPb-GneBeSMPU&quot; content-type-secured-asset=&quot;image/jpeg&quot; style=&quot;max-width: 100%; height: auto; max-height: 1000px;&quot;&gt;&lt;/a&gt;</content>
+    <author>
+      <name>bagder</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/177011?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/569041/curl-8_20_0</id>
+    <updated>2026-04-29T13:31:23+07:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/curl/curl/releases/tag/curl-8_20_0"/>
+    <title>8.20</title>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://curl.se/ch/8.20.0.html&quot; rel=&quot;nofollow&quot;&gt;changelog&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://daniel.haxx.se/blog/2026/04/29/curl-8-20-0/&quot; rel=&quot;nofollow&quot;&gt;release blog&lt;/a&gt;&lt;/p&gt;
+&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/177011/585234682-b471bc2f-c834-4147-b88f-8fea4579732c.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNTg1MjM0NjgyLWI0NzFiYzJmLWM4MzQtNDE0Ny1iODhmLThmZWE0NTc5NzMyYy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iMmVmNGJiY2U1YzZiZGU5ZWEzZTViOTY2MjFkZTE3ODFkODk2ZWYyMjUzOGZhNDBhYmI0Yjk2NTA4YTcxOTA2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.ZkT-Q70uDCD_h1vjoRQwsih8XK5KxN30Fchx0YK3yiU&quot;&gt;&lt;img width=&quot;2000&quot; height=&quot;1000&quot; alt=&quot;curl-8- 20 0&quot; src=&quot;https://private-user-images.githubusercontent.com/177011/585234682-b471bc2f-c834-4147-b88f-8fea4579732c.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNTg1MjM0NjgyLWI0NzFiYzJmLWM4MzQtNDE0Ny1iODhmLThmZWE0NTc5NzMyYy5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iMmVmNGJiY2U1YzZiZGU5ZWEzZTViOTY2MjFkZTE3ODFkODk2ZWYyMjUzOGZhNDBhYmI0Yjk2NTA4YTcxOTA2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.ZkT-Q70uDCD_h1vjoRQwsih8XK5KxN30Fchx0YK3yiU&quot; content-type-secured-asset=&quot;image/jpeg&quot; style=&quot;max-width: 100%; height: auto; max-height: 1000px;&quot;&gt;&lt;/a&gt;</content>
+    <author>
+      <name>bagder</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/177011?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/569041/curl-8_19_0</id>
+    <updated>2026-03-11T14:03:41+07:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/curl/curl/releases/tag/curl-8_19_0"/>
+    <title>8.19.0</title>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://curl.se/ch/8.19.0.html&quot; rel=&quot;nofollow&quot;&gt;change log&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://daniel.haxx.se/blog/2026/03/11/curl-8-19-0/&quot; rel=&quot;nofollow&quot;&gt;release blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/177011/561402480-a4407c4d-db1f-4777-ac81-5d99109fa33f.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNTYxNDAyNDgwLWE0NDA3YzRkLWRiMWYtNDc3Ny1hYzgxLTVkOTkxMDlmYTMzZi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iZjBjOWU3NGQ3ODEzOGQ3ZTlmZjE5ZmE0YzkzZGVlZTIxZTkyZTczMjYwNmQxNWVjMDhjNzc4Mzc0Mzk4NGI5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.k2QdvQx4Jl-HymFLkU2D6kQxBw34R7FYhhHQ1wq47K4&quot;&gt;&lt;img src=&quot;https://private-user-images.githubusercontent.com/177011/561402480-a4407c4d-db1f-4777-ac81-5d99109fa33f.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNTYxNDAyNDgwLWE0NDA3YzRkLWRiMWYtNDc3Ny1hYzgxLTVkOTkxMDlmYTMzZi5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1iZjBjOWU3NGQ3ODEzOGQ3ZTlmZjE5ZmE0YzkzZGVlZTIxZTkyZTczMjYwNmQxNWVjMDhjNzc4Mzc0Mzk4NGI5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.k2QdvQx4Jl-HymFLkU2D6kQxBw34R7FYhhHQ1wq47K4&quot; alt=&quot;curl-8- 19 0-1080&quot; content-type-secured-asset=&quot;image/jpeg&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>bagder</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/177011?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/569041/curl-8_18_0</id>
+    <updated>2026-01-07T14:36:11+07:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/curl/curl/releases/tag/curl-8_18_0"/>
+    <title>8.18.0</title>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://curl.se/ch/8.18.0.html&quot; rel=&quot;nofollow&quot;&gt;changelog&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://daniel.haxx.se/blog/2026/01/07/curl-8-18-0/&quot; rel=&quot;nofollow&quot;&gt;release blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/177011/532701609-43d54697-f6f7-43fc-ae22-1dd6f7095953.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNTMyNzAxNjA5LTQzZDU0Njk3LWY2ZjctNDNmYy1hZTIyLTFkZDZmNzA5NTk1My5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03N2FhMWYzMWJhYzI3ZDZhOGIzMmVjNDc5NWI2ZTI0YzNiM2U1YWM4OTczMDNiYjkyYjAxMDMwYzZmODdjOTdiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.O-T3vLxfW-oVM7pOyI28mT-OUtjNb7nkY7q0n6ntgKc&quot;&gt;&lt;img src=&quot;https://private-user-images.githubusercontent.com/177011/532701609-43d54697-f6f7-43fc-ae22-1dd6f7095953.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNTMyNzAxNjA5LTQzZDU0Njk3LWY2ZjctNDNmYy1hZTIyLTFkZDZmNzA5NTk1My5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT03N2FhMWYzMWJhYzI3ZDZhOGIzMmVjNDc5NWI2ZTI0YzNiM2U1YWM4OTczMDNiYjkyYjAxMDMwYzZmODdjOTdiJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.O-T3vLxfW-oVM7pOyI28mT-OUtjNb7nkY7q0n6ntgKc&quot; alt=&quot;curl-8- 18 0&quot; content-type-secured-asset=&quot;image/jpeg&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>bagder</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/177011?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/569041/curl-8_17_0</id>
+    <updated>2025-11-05T14:18:20+07:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/curl/curl/releases/tag/curl-8_17_0"/>
+    <title>8.17.0</title>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://curl.se/ch/8.17.0.html&quot; rel=&quot;nofollow&quot;&gt;changelog&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://daniel.haxx.se/blog/2025/11/05/curl-8-17-0/&quot; rel=&quot;nofollow&quot;&gt;release blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/177011/509978041-9a6de477-3fc2-4609-95ea-a1806b5d9831.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNTA5OTc4MDQxLTlhNmRlNDc3LTNmYzItNDYwOS05NWVhLWExODA2YjVkOTgzMS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01YzY3NTEwZGNjMzc4NGY2YjgwY2JiNWU4NTg0NzY2ZWE2NjNjODBhYWNmYTEyN2Y4MThlZWM1M2U5YTZiNmJlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.FVneyxS1xG-f51NSX1UQi_tk0P6e6OM4PmFpBFf1rgE&quot;&gt;&lt;img src=&quot;https://private-user-images.githubusercontent.com/177011/509978041-9a6de477-3fc2-4609-95ea-a1806b5d9831.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNTA5OTc4MDQxLTlhNmRlNDc3LTNmYzItNDYwOS05NWVhLWExODA2YjVkOTgzMS5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01YzY3NTEwZGNjMzc4NGY2YjgwY2JiNWU4NTg0NzY2ZWE2NjNjODBhYWNmYTEyN2Y4MThlZWM1M2U5YTZiNmJlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.FVneyxS1xG-f51NSX1UQi_tk0P6e6OM4PmFpBFf1rgE&quot; alt=&quot;curl-8 17 0&quot; content-type-secured-asset=&quot;image/jpeg&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>bagder</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/177011?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/569041/curl-8_16_0</id>
+    <updated>2025-09-10T12:57:42+07:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/curl/curl/releases/tag/curl-8_16_0"/>
+    <title>8.16.0</title>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://curl.se/ch/8.16.0.html&quot; rel=&quot;nofollow&quot;&gt;changelog&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://daniel.haxx.se/blog/2025/09/10/curl-8-16-0/&quot; rel=&quot;nofollow&quot;&gt;release blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/177011/487623260-95d79598-17eb-44b0-8b8a-3ef35470d270.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNDg3NjIzMjYwLTk1ZDc5NTk4LTE3ZWItNDRiMC04YjhhLTNlZjM1NDcwZDI3MC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02YjE2MGNmMTU3YzZiN2NkODJhNzI4ZjY4ZjNkMTc4N2QyYTc2Mjk1NGY1ZGRhYmU0MDQ1MTBlOTg0MWE3NmJmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.CQATyfok7F9pTgOL1TDPj0v6x907elvKRJU5emh2Jrk&quot;&gt;&lt;img src=&quot;https://private-user-images.githubusercontent.com/177011/487623260-95d79598-17eb-44b0-8b8a-3ef35470d270.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNDg3NjIzMjYwLTk1ZDc5NTk4LTE3ZWItNDRiMC04YjhhLTNlZjM1NDcwZDI3MC5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02YjE2MGNmMTU3YzZiN2NkODJhNzI4ZjY4ZjNkMTc4N2QyYTc2Mjk1NGY1ZGRhYmU0MDQ1MTBlOTg0MWE3NmJmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.CQATyfok7F9pTgOL1TDPj0v6x907elvKRJU5emh2Jrk&quot; alt=&quot;curl-8 16 0-1080&quot; content-type-secured-asset=&quot;image/jpeg&quot; style=&quot;max-width: 100%;&quot;&gt;&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>bagder</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/177011?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/569041/curl-8_15_0</id>
+    <updated>2025-07-16T13:31:47+07:00</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/curl/curl/releases/tag/curl-8_15_0"/>
+    <title>8.15.0</title>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://curl.se/ch/8.15.0.html&quot; rel=&quot;nofollow&quot;&gt;changelog&lt;/a&gt;&lt;br&gt;
+&lt;a href=&quot;https://daniel.haxx.se/blog/2025/07/16/curl-8-15-0/&quot; rel=&quot;nofollow&quot;&gt;release blog&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; href=&quot;https://private-user-images.githubusercontent.com/177011/466845991-0f5db216-92b0-4b74-b796-95ad481ec977.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNDY2ODQ1OTkxLTBmNWRiMjE2LTkyYjAtNGI3NC1iNzk2LTk1YWQ0ODFlYzk3Ny5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04MmUwZWVlZTQ4MjBiNGEzZTM2NDAxOTc1MzAwYWExMzAwNjI0YjYyNmU1Y2Y2OWM1MGRmZGMxMTQ1MWEyZThlJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZyZXNwb25zZS1jb250ZW50LXR5cGU9aW1hZ2UlMkZqcGVnIn0.9exncCIlMwDmoX4eQWV45vUOQbeDrvvTESFvIugp_Y0&quot;&gt;&lt;img src=&quot;https://private-user-images.githubusercontent.com/177011/466845991-0f5db216-92b0-4b74-b796-95ad481ec977.jpg?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3ODgyNjc4NTksIm5iZiI6MTc4ODI2NzU1OSwicGF0aCI6Ii8xNzcwMTEvNDY2ODQ1OTkxLTBmNWRiMjE2LTkyYjAtNGI3NC1iNzk2LTk1YWQ0ODFlYzk3Ny5qcGc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjYwOTAxJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI2MDkwMVQxMjU5MTlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT04MmUwZWVlZTQ4MjBiNGEzZTM2NDAxOTc1MzAwYWExMzAwNjI0YjYyNmU1Y2Y2OWM
