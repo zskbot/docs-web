@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HashiCorp Developer — Terraform Apply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0b0c0f;
+    --bg-raise: #131519;
+    --surface: #16181d;
+    --surface-hi: #1d2027;
+    --border: #26282f;
+    --border-soft: #1e2026;
+    --text: #f2f3f5;
+    --text-dim: #a9adb8;
+    --text-faint: #6b6f7a;
+    --accent: #a067da;
+    --accent-soft: #a067da22;
+    --accent-line: #a067da55;
+    --green: #33c48a;
+    --amber: #e0a63c;
+    --mono: 'IBM Plex Mono', ui-monospace, monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--bg); color:var(--text);
+    font-family:var(--sans); -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+  a{color:inherit; text-decoration:none;}
+  ::selection{background:var(--accent-soft); color:var(--text);}
+
+  /* progress bar */
+  #progress{position:fixed; top:0; left:0; height:2px; width:0%; background:var(--accent); z-index:100; transition:width .1s linear;}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,12,15,.86); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border-soft);
+  }
+  .nav-inner{
+    max-width:1280px; margin:0 auto; padding:14px 32px;
+    display:flex; align-items:center; gap:28px;
+  }
+  .logo{display:flex; align-items:center; gap:10px; font-weight:700; font-size:15px; letter-spacing:.2px;}
+  .logo svg{width:22px; height:22px;}
+  .logo .divider{width:1px; height:18px; background:var(--border); margin:0 2px;}
+  .logo .product{color:var(--accent); font-weight:600;}
+  .nav-links{display:flex; gap:22px; font-size:13.5px; color:var(--text-dim); flex:1;}
+  .nav-links a:hover{color:var(--text);}
+  .nav-right{display:flex; align-items:center; gap:16px; font-size:13.5px;}
+  .btn-ghost{color:var(--text-dim); padding:7px 10px;}
+  .btn-ghost:hover{color:var(--text);}
+  .btn-primary{
+    background:var(--text); color:var(--bg); padding:7px 14px; border-radius:5px;
+    font-weight:600;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    max-width:1280px; margin:0 auto; padding:76px 32px 64px;
+    display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center;
+  }
+  .hero-eyebrow{
+    display:inline-flex; align-items:center; gap:8px; font-size:12.5px;
+    color:var(--accent); border:1px solid var(--accent-line); background:var(--accent-soft);
+    padding:5px 11px; border-radius:20px; margin-bottom:22px; font-family:var(--mono);
+  }
+  .hero-eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--green);}
+  .hero h1{
+    font-size:52px; line-height:1.06; letter-spacing:-1.4px; margin:0 0 20px;
+    font-weight:800;
+  }
+  .hero p.lede{font-size:17px; color:var(--text-dim); max-width:44ch; margin:0 0 32px;}
+  .hero-ctas{display:flex; gap:12px; margin-bottom:40px;}
+  .cta-primary{
+    background:var(--accent); color:#fff; padding:11px 20px; border-radius:6px;
+    font-weight:600; font-size:14.5px;
+  }
+  .cta-secondary{
+    border:1px solid var(--border); padding:11px 20px; border-radius:6px;
+    font-weight:600; font-size:14.5px; color:var(--text);
+  }
+  .cta-secondary:hover{border-color:var(--text-faint);}
+
+  .product-rail{display:flex; flex-wrap:wrap; gap:8px;}
+  .chip{
+    font-size:12.5px; color:var(--text-dim); border:1px solid var(--border);
+    padding:6px 12px; border-radius:20px;
+  }
+  .chip.on{color:var(--accent); border-color:var(--accent-line); background:var(--accent-soft);}
+
+  /* terminal */
+  .term{
+    background:var(--surface); border:1px solid var(--border); border-radius:10px;
+    overflow:hidden; box-shadow:0 30px 60px -30px rgba(0,0,0,.6);
+  }
+  .term-bar{
+    display:flex; align-items:center; gap:8px; padding:11px 14px;
+    border-bottom:1px solid var(--border-soft); background:var(--bg-raise);
+  }
+  .term-bar .d{width:10px; height:10px; border-radius:50%; background:#3a3d45;}
+  .term-bar .label{margin-left:8px; font-family:var(--mono); font-size:11.5px; color:var(--text-faint);}
+  .term-body{padding:18px 18px 22px; font-family:var(--mono); font-size:12.8px; line-height:1.75; color:#c7cad3; min-height:280px;}
+  .term-body .prompt{color:var(--text-faint);}
+  .term-body .cmd{color:#fff;}
+  .term-body .ok{color:var(--green);}
+  .term-body .plus{color:var(--green);}
+  .term-body .muted{color:var(--text-faint);}
+  .cursor{display:inline-block; width:7px; height:14px; background:var(--accent); vertical-align:-2px; animation:blink 1s steps(2) infinite;}
+  @keyframes blink{50%{opacity:0;}}
+
+  /* ---------- DOCS SHELL ---------- */
+  .docs-shell{
+    border-top:1px solid var(--border-soft);
+    background:var(--bg-raise);
+  }
+  .docs-crumb{
+    max-width:1280px; margin:0 auto; padding:16px 32px 0; font-size:12.5px; color:var(--text-faint);
+    display:flex; gap:6px; align-items:center;
+  }
+  .docs-crumb a:hover{color:var(--text-dim);}
+  .docs-grid{
+    max-width:1280px; margin:0 auto; padding:20px 32px 100px;
+    display:grid; grid-template-columns:220px minmax(0,1fr) 200px; gap:48px;
+  }
+
+  /* left sidebar */
+  .side-nav{position:sticky; top:70px; align-self:start; font-size:13.5px;}
+  .side-nav .group-title{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-faint); margin:0 0 10px; font-weight:600;}
+  .side-nav ul{list-style:none; margin:0 0 22px; padding:0; border-left:1px solid var(--border-soft);}
+  .side-nav li a{
+    display:block; padding:6px 0 6px 14px; color:var(--text-dim); border-left:2px solid transparent; margin-left:-1px;
+  }
+  .side-nav li a:hover{color:var(--text);}
+  .side-nav li a.active{color:var(--text); border-left-color:var(--accent); font-weight:600;}
+
+  /* article */
+  article{min-width:0;}
+  .article-head{margin-bottom:34px;}
+  .meta-row{display:flex; gap:14px; align-items:center; font-size:12.5px; color:var(--text-faint); margin-bottom:14px;}
+  .meta-row .pill{border:1px solid var(--border); padding:2px 9px; border-radius:20px;}
+  article h1.title{font-size:32px; letter-spacing:-.6px; margin:0 0 14px; font-weight:800;}
+  article p.summary{color:var(--text-dim); font-size:15.5px; max-width:66ch; margin:0;}
+
+  .step-list{list-style:none; margin:28px 0; padding:0; display:grid; gap:10px;}
+  .step-list li{
+    display:flex; gap:14px; padding:14px 16px; border:1px solid var(--border-soft);
+    border-radius:8px; background:var(--surface);
+  }
+  .step-list .num{
+    font-family:var(--mono); font-size:12px; color:var(--accent); width:20px; flex-shrink:0; padding-top:1px;
+  }
+  .step-list b{display:block; font-size:14px; margin-bottom:2px;}
+  .step-list span{color:var(--text-dim); font-size:13.5px;}
+
+  section.doc-section{margin:44px 0; scroll-margin-top:80px;}
+  section.doc-section h2{font-size:22px; letter-spacing:-.3px; margin:0 0 14px; font-weight:700;}
+  section.doc-section h3{font-size:16.5px; margin:26px 0 10px; font-weight:600;}
+  section.doc-section p{color:#cdd0d8; font-size:15px; margin:0 0 14px; max-width:70ch;}
+  section.doc-section code.inline{
+    font-family:var(--mono); background:var(--surface-hi); border:1px solid var(--border);
+    padding:1.5px 6px; border-radius:4px; font-size:.87em; color:#e3c9ff;
+  }
+
+  .code-block{
+    background:var(--surface); border:1px solid var(--border-soft); border-radius:8px;
+    margin:16px 0 20px; overflow:hidden;
+  }
+  .code-block .file{
+    font-family:var(--mono); font-size:11.5px; color:var(--text-faint); padding:9px 14px;
+    border-bottom:1px solid var(--border-soft); background:var(--bg-raise);
+  }
+  .code-block pre{margin:0; padding:16px; overflow-x:auto; font-family:var(--mono); font-size:12.8px; line-height:1.7; color:#c7cad3;}
+  .code-block .comment{color:var(--text-faint);}
+  .code-block .kw{color:#f2a5c4;}
+  .code-block .str{color:#a3d977;}
+  .code-block .g{color:var(--green);}
+
+  .callout{
+    border-left:3px solid var(--amber); background:#e0a63c14; padding:12px 16px; border-radius:0 6px 6px 0;
+    font-size:14px; color:#e6d3ab; margin:18px 0;
+  }
+  .callout b{color:var(--amber);}
+
+  .tab-row{display:flex; gap:4px; border-bottom:1px solid var(--border-soft); margin-bottom:16px;}
+  .tab-row .tab{font-size:13px; padding:8px 4px; color:var(--text-faint); border-bottom:2px solid transparent; cursor:default;}
+  .tab-row .tab.on{color:var(--text); border-bottom-color:var(--accent); font-weight:600;}
+
+  .page-nav{display:flex; justify-content:space-between; margin-top:56px; padding-top:24px; border-top:1px solid var(--border-soft);}
+  .page-nav a{font-size:13.5px; color:var(--text-dim); display:flex; flex-direction:column; gap:4px;}
+  .page-nav a:last-child{text-align:right;}
+  .page-nav .dir{font-size:11px; color:var(--text-faint); text-transform:uppercase; letter-spacing:.05em;}
+  .page-nav a:hover .lbl{color:var(--accent);}
+
+  /* right rail */
+  .toc{position:sticky; top:70px; align-self:start; font-size:13px;}
+  .toc .group-title{font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-faint); margin:0 0 12px; font-weight:600;}
+  .toc ol{list-style:none; margin:0; padding:0; border-left:1px solid var(--border-soft);}
+  .toc li a{
+    display:block; padding:5px 0 5px 14px; color:var(--text-faint); border-left:2px solid transparent; margin-left:-1px;
+  }
+  .toc li a.active{color:var(--accent); border-left-color:var(--accent);}
+
+  footer{border-top:1px solid var(--border-soft); padding:32px; text-align:center; font-size:12.5px; color:var(--text-faint);}
+
+  @media (max-width: 1080px){
+    .docs-grid{grid-template-columns:1fr;}
+    .side-nav, .toc{position:static; border-top:1px solid var(--border-soft); padding-top:20px; margin-bottom:20px;}
+    .hero{grid-template-columns:1fr;}
+    .hero h1{font-size:38px;}
+    .nav-links{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="logo">
+      <svg viewBox="0 0 24 24" fill="none"><rect width="24" height="24" rx="5" fill="#a067da"/><path d="M8 6v12M16 6v5.5M16 16.5V18" stroke="#0b0c0f" stroke-width="2" stroke-linecap="round"/></svg>
+      HashiCorp<span class="divider"></span><span class="product">Terraform</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#hero">Trang chủ</a>
+      <a href="#docs">Tài liệu</a>
+      <a href="#apply-configuration">Tutorials</a>
+      <a href="#">CLI</a>
+      <a href="#">HCP Terraform</a>
+      <a href="#">Registry</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn-ghost" href="#">Đăng nhập</a>
+      <a class="btn-primary" href="#">Đăng ký</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO (merged from trang chủ developer.hashicorp.com) ============ -->
+<section class="hero" id="hero">
+  <div>
+    <div class="hero-eyebrow"><span class="dot"></span> Terraform CLI · Tutorial trực tiếp</div>
+    <h1>Từng bước dựng hạ tầng, ngay trong terminal của bạn.</h1>
+    <p class="lede">Khám phá tài liệu và hướng dẫn của mọi sản phẩm HashiCorp — bắt đầu với luồng làm việc cốt lõi của Terraform: init, plan, apply.</p>
+    <div class="hero-ctas">
+      <a class="cta-primary" href="#apply-configuration">Bắt đầu tutorial Apply</a>
+      <a class="cta-secondary" href="#docs">Xem tài liệu CLI</a>
+    </div>
+    <div class="product-rail">
+      <span class="chip on">Terraform</span>
+      <span class="chip">HCP</span>
+      <span class="chip">Vault</span>
+      <span class="chip">Consul</span>
+      <span class="chip">Nomad</span>
+      <span class="chip">Boundary</span>
+      <span class="chip">Packer</span>
+      <span class="chip">Waypoint</span>
+      <span class="chip">Vagrant</span>
+    </div>
+  </div>
+
+  <div class="term">
+    <div class="term-bar">
+      <span class="d"></span><span class="d"></span><span class="d"></span>
+      <span class="label">learn-terraform-apply — zsh</span>
+    </div>
+    <div class="term-body" id="termBody"></div>
+  </div>
+</section>
+
+<!-- ============ DOCS (nội dung từ trang tutorials/cli/apply) ============ -->
+<div class="docs-shell" id="docs">
+  <div class="docs-crumb">
+    <a href="#">Developer</a> <span>/</span> <a href="#">Terraform</a> <span>/</span> <a href="#">Tutorials</a> <span>/</span> <a href="#">CLI</a> <span>/</span> <span style="color:var(--text-dim)">Apply</span>
+  </div>
+
+  <div class="docs-grid">
+
+    <!-- LEFT SIDE NAV -->
+    <aside class="side-nav">
+      <div class="group-title">CLI Workflow</div>
+      <ul>
+        <li><a href="#">Init</a></li>
+        <li><a href="#">Plan</a></li>
+        <li><a href="#" class="active">Apply</a></li>
+        <li><a href="#">Variables</a></li>
+        <li><a href="#">Outputs</a></li>
+        <li><a href="#">Terraform versions</a></li>
+        <li><a href="#">Provider versions</a></li>
+        <li><a href="#">Target resources</a></li>
+        <li><a href="#">Manage state</a></li>
+        <li><a href="#">Import</a></li>
+        <li><a href="#">Refresh state</a></li>
+      </ul>
+      <div class="group-title">Tài nguyên</div>
+      <ul>
+        <li><a href="#">Thư viện Tutorial</a></li>
+        <li><a href="#">Chứng chỉ</a></li>
+        <li><a href="#">Diễn đàn cộng đồng</a></li>
+        <li><a href="#">GitHub</a></li>
+      </ul>
+    </aside>
+
+    <!-- ARTICLE -->
+    <article>
+      <div class="article-head">
+        <div class="meta-row">
+          <span class="pill">19 phút đọc</span>
+          <span class="pill">Terraform</span>
+          <span class="pill">CLI</span>
+        </div>
+        <h1 class="title">Apply cấu hình Terraform</h1>
+        <p class="summary">Khởi tạo một EC2 instance và một S3 bucket, quan sát cách Terraform xử lý lỗi trong lúc apply, và thực hành các cách dùng phổ biến của lệnh <code class="inline">apply</code>.</p>
+      </div>
+
+      <p>Quy trình cốt lõi của Terraform gồm ba bước, sau khi bạn đã viết cấu hình:</p>
+
+      <ul class="step-list">
+        <li><span class="num">01</span><div><b>Initialize</b><span>Chuẩn bị workspace để Terraform có thể áp dụng cấu hình của bạn.</span></div></li>
+        <li><span class="num">02</span><div><b>Plan</b><span>Xem trước những thay đổi mà Terraform sẽ thực hiện trước khi apply.</span></div></li>
+        <li><span class="num">03</span><div><b>Apply</b><span>Thực thi các thay đổi trong plan để tạo, cập nhật hoặc xoá tài nguyên.</span></div></li>
+      </ul>
+
+      <section class="doc-section" id="prereq">
+        <h2>Yêu cầu chuẩn bị</h2>
+        <p>Bạn có thể hoàn thành tutorial này với Terraform Community Edition hoặc HCP Terraform — nền tảng quản lý và thực thi các dự án Terraform, bao gồm remote state, remote execution và các tóm tắt tài nguyên theo workspace.</p>
+        <div class="tab-row">
+          <span class="tab on">Community Edition</span>
+          <span class="tab">HCP Terraform</span>
+        </div>
+        <p>Bạn sẽ cần:</p>
+        <ul style="color:#cdd0d8; font-size:15px; padding-left:20px; margin:0 0 14px;">
+          <li>Terraform v1.6 trở lên, đã cài đặt cục bộ.</li>
+          <li>Một tài khoản AWS với credentials đã cấu hình cho Terraform.</li>
+          <li>Công cụ dòng lệnh <code class="inline">jq</code>.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="review">
+        <h2>Xem lại cấu hình</h2>
+        <p>Repository mẫu tạo một EC2 instance và một S3 bucket. Sau khi clone về, cấu trúc thư mục gồm các file cấu hình chính sau:</p>
+
+        <div class="code-block">
+          <div class="file">main.tf</div>
+          <pre><span class="kw">resource</span> <span class="str">"aws_instance"</span> <span class="str">"main"</span> {
+  count         = 3
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = <span class="str">"t2.micro"</span>
+
+  tags = {
+    Name  = <span class="g">"${random_pet.instance.id}-${count.index}"</span>
+    Owner = <span class="g">"${var.project_name}-tutorial"</span>
+  }
+}
+
+<span class="kw">resource</span> <span class="str">"aws_s3_bucket"</span> <span class="str">"example"</span> {
+  tags = {
+    Name  = <span class="str">"Example Bucket"</span>
+    Owner = <span class="g">"${var.project_name}-tutorial"</span>
+  }
+}</pre>
+        </div>
+        <p>Tài nguyên <code class="inline">aws_instance.main</code> phụ thuộc vào <code class="inline">random_pet.instance</code> và data source <code class="inline">aws_ami.ubuntu</code>. Vì <code class="inline">aws_s3_bucket.example</code> không phụ thuộc tài nguyên nào khác, Terraform sẽ tạo nó song song với các tài nguyên còn lại.</p>
+      </section>
+
+      <section class="doc-section" id="init">
+        <h2>Khởi tạo cấu hình</h2>
+        <p>Trước khi tạo execution plan, Terraform cần cài đặt mọi provider và module mà cấu hình tham chiếu tới.</p>
+        <div class="code-block">
+          <div class="file">terminal</div>
+          <pre><span class="g">$</span> terraform init
+<span class="comment">Initializing provider plugins...</span>
+- Installing hashicorp/aws v6.2.0...
+- Installed hashicorp/aws v6.2.0 (signed by HashiCorp)
+- Installing hashicorp/random v3.5.1...
+- Installed hashicorp/random v3.5.1 (signed by HashiCorp)
+
+<span class="g">Terraform has been successfully initialized!</span></pre>
+        </div>
+      </section>
+
+      <section class="doc-section" id="apply-configuration">
+        <h2>Apply cấu hình</h2>
+        <p>Chạy lệnh apply. Vì bạn chưa cung cấp saved plan, Terraform sẽ tự tạo một plan và yêu cầu bạn xác nhận trước khi thay đổi bất kỳ tài nguyên nào.</p>
+        <p>Khi bạn chấp thuận plan, Terraform sẽ: khoá state của workspace, thực thi các bước trong plan bằng provider đã cài đặt (song song khi có thể, tuần tự khi tài nguyên phụ thuộc lẫn nhau), cập nhật state, mở khoá state, rồi báo cáo kết quả cùng các output value.</p>
+        <div class="code-block">
+          <div class="file">terminal</div>
+          <pre><span class="g">$</span> terraform apply
+<span class="comment">Plan: 5 to add, 0 to change, 0 to destroy.</span>
+
+  Enter a value: <span class="cursor2">yes</span>
+
+random_pet.instance: Creation complete after 0s [id=dashing-tapir]
+aws_s3_bucket.example: Creation complete after 2s
+aws_instance.main[0]: Creation complete after 53s
+aws_instance.main[1]: Creation complete after 43s
+aws_instance.main[2]: Creation complete after 33s
+
+<span class="g">Apply complete! Resources: 5 added, 0 changed, 0 destroyed.</span></pre>
+        </div>
+
+        <h3 id="errors-during-apply">Lỗi phát sinh khi apply</h3>
+        <p>Khi Terraform gặp lỗi trong bước apply, nó sẽ: ghi log và báo lỗi ra console, cập nhật state file với những thay đổi đã kịp thực hiện, mở khoá state, rồi thoát. Terraform không tự động rollback một apply dở dang — bạn cần apply lại sau khi khắc phục nguyên nhân.</p>
+        <div class="callout"><b>Lưu ý —</b> Hạ tầng của bạn có thể ở trạng thái không hợp lệ sau khi một bước apply lỗi. Hãy chạy lại <code class="inline">terraform apply</code> sau khi xử lý xong nguyên nhân gốc.</div>
+        <p>Một số nguyên nhân phổ biến gây lỗi khi apply:</p>
+        <ul style="color:#cdd0d8; font-size:15px; padding-left:20px; margin:0 0 14px;">
+          <li>Tài nguyên bị thay đổi bên ngoài phạm vi kiểm soát của Terraform.</li>
+          <li>Lỗi mạng hoặc các lỗi tạm thời khác.</li>
+          <li>Lỗi có thể lường trước từ API upstream, ví dụ trùng tên tài nguyên hoặc chạm giới hạn.</li>
+          <li>Lỗi không lường trước từ API upstream, ví dụ lỗi máy chủ nội bộ.</li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="replace">
+        <h2>Thay thế tài nguyên</h2>
+        <p>Terraform cung cấp hai tham số cho lệnh <code class="inline">plan</code> và <code class="inline">apply</code> để thao tác với từng tài nguyên riêng lẻ: <code class="inline">-replace</code> và <code class="inline">-target</code>. Dùng <code class="inline">-replac
